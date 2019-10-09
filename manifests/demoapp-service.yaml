@@ -9,6 +9,6 @@ spec:
   ports:
   - name: nginx
     port: 80
-    targetPort: nginx
+    targetPort: 80
   selector:
     app: nginx

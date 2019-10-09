@@ -137,7 +137,7 @@ local k = import '1.14.7/k.libsonnet';
   newService(name, namespace, port):: (
     local service = k.core.v1.service;
     local servicePort = k.core.v1.service.mixin.spec.portsType;
-    local p = servicePort.newNamed(name, port, name);
+    local p = servicePort.newNamed(name, port, port);
 
     local s = service.new(name, {'app': name}, p) +
       service.mixin.metadata.withNamespace(namespace) +
