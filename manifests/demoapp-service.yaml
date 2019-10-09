@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: nginx
+  name: nginx
+  namespace: default
+spec:
+  ports:
+  - name: nginx
+    port: 80
+    targetPort: nginx
+  selector:
+    app: nginx
