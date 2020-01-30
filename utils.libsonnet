@@ -237,4 +237,24 @@ local k = import '1.14.7/k.libsonnet';
         },
       }}
     ),
+
+  # Adds a property to a container in a deployment
+  # property is an object with the format
+  # {propertyName: 'value'}
+    addContainerProperty(deployment, container, property):: (
+    {spec+: {
+        template+: {
+          spec+: {
+            containers:
+              std.map(
+                function(c)
+                  if c.name == container then
+                    c + property
+                  else c,
+                super.containers
+              ),
+          },
+        },
+      }}
+    ),
 }

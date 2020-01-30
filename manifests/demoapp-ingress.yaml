@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   rules:
-  - host: nginx.192.168.99.100.nip.io
+  - host: nginx.192.168.99.102.nip.io
     http:
       paths:
       - backend:
